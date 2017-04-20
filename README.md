@@ -1,4 +1,4 @@
-# mashallahgruppen
+# Mashallahgruppen
 
 ## Installation
 
