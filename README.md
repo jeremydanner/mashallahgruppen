@@ -5,3 +5,5 @@
 ## Configuration
 
 ## Plugins
+
+## Google indexering
