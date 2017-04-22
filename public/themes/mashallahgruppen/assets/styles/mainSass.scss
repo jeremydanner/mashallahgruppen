@@ -1,3 +1,40 @@
-nav {
-    color: #fff;
+/*
+    Author @ https://HandelsMarketing.se
+
+    The Main Scss for http://www.mashallahgruppen.se/
+ */
+
+// rgb(245, 245, 245)
+$primaryMenyBackgroundColor: #f5f5f5;
+
+// rgb(255, 255, 255)
+$primaryBackgroundColor: #ffffff;
+
+// rgb(255, 157, 0)
+$mashallahOrange: #ff9d00;
+
+// rgb(241, 209, 255)
+$buttonPink: #f1d1ff;
+
+// rgb(95, 95, 95)
+$mainTextColor: #5f5f5f;
+
+// Roboto | https://fonts.google.com/specimen/Roboto
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$headerFont: 'Roboto', sans-serif;
+
+// Roboto slab | https://fonts.google.com/specimen/Roboto+Slab?selection.family=Roboto+Slab
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+$mainParagraphFont: 'Roboto Slab', serif;
+
+// Change color and font for the site title in navbar
+.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+    color: $mainTextColor;
+    font-family: $headerFont;
+}
+
+// Change color and font for the links in navbar
+.navbar-light .navbar-nav .nav-link {
+    color: $mainTextColor;
+    font-family: $headerFont;
 }

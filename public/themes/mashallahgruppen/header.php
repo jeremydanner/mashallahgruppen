@@ -13,7 +13,7 @@
 <body>
 
     <!-- Bootsrap 4 navbar -->
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #e42407;">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #f5f5f5;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
