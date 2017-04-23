@@ -13,11 +13,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
     <meta name="author" content="HandelsMarketing">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Mashallahgruppen">
+    <link rel="icon" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/public/applicationLogos/192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mashallahgruppen">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/public/applicationLogos/144.png">
+
+    <!-- Add your bookmark icon hear -->
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/public/logoMashallagruppen.png">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!-- the public folder is the root -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/public/styles/mainSass.css">
 
-    <title>Mashallahgruppen || Ett socialt företag som vänder sig i första hand till människor som av olika skäl hamnat utanför arbetsmarknaden och behöver stöd att komma tillbaka till arbetslivet</title>
+    <title>Mashallahgruppen</title>
 
 </head>
 <body>

@@ -1,0 +1,26 @@
+
+{
+  "name": "Mashallahgruppen, ett socialt företag som vänder sig i första hand till människor som av olika skäl hamnat utanför arbetsmarknaden och behöver stöd att komma tillbaka till arbetslivet",
+  "short_name": "Mashallahgruppen",
+  "icons": [{
+        "src": "public/applicationLogos/128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }, {
+        "src": "public/applicationLogos/144.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      }, {
+        "src": "public/applicationLogos/152.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "public/applicationLogos/192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }],
+  "start_url": "index.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff9e00"
+}
