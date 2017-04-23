@@ -32,7 +32,3 @@
             </ul>
         </div>
     </nav>
-
-    <div class="container">
-
-<?php echo get_template_directory_uri(); ?>

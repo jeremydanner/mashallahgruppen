@@ -1,10 +1,10 @@
 /*
-    Author @ https://HandelsMarketing.se
+Author @ https://HandelsMarketing.se
 
-    The Main Scss for http://www.mashallahgruppen.se/
- */
+The Main Scss for http://www.mashallahgruppen.se/
+*/
 
- // TODO: mediaquery for thubmnail and navbar. The button dosent dit the navbar in responsive view
+// TODO: mediaquery for thubmnail and navbar. The button dosent dit the navbar in responsive view
 
 // rgb(245, 245, 245)
 $primaryMenyBackgroundColor: #f5f5f5;
@@ -30,11 +30,41 @@ $headerFont: 'Roboto', sans-serif;
 $mainParagraphFont: 'Roboto Slab', serif;
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 0;
-  position: relative;
-  background-color: $primaryBackgroundColor;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    background-color: $primaryBackgroundColor;
+}
+
+p, a, span {
+    font-family: $mainParagraphFont;
+    color: $mainTextColor;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font-family: $headerFont;
+    color: $mainTextColor;
+}
+
+button {
+    background-color: $buttonPink;
+    border-radius: 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 // Change color and font for the site title in navbar
@@ -51,4 +81,29 @@ body {
 
 img.thumbnail {
     height: 40px;
+}
+
+.headerHero {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+img.hero {
+    width: 100%;
+    height: auto;
+}
+
+.rowWrapper {
+    margin: 100px auto;
+}
+
+.colInnerWrapper {
+    max-width: 700px;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+    }
 }
