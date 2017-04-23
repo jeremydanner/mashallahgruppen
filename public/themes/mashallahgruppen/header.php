@@ -15,7 +15,7 @@
     <meta name="author" content="HandelsMarketing">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!-- the public folder is the root -->
-    <link rel="stylesheet" href="/themes/mashallahgruppen/public/styles/mainSass.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/public/styles/mainSass.css">
     <title>Site Title</title>
 </head>
 <body>
