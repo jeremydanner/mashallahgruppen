@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/">Mashallahgruppen IMG</a>
+        <a class="navbar-brand" href="/"><img class="thumbnail" src="<?php echo get_template_directory_uri(); ?>/public/logoMashallagruppen.png" alt=""></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -33,3 +34,5 @@
     </nav>
 
     <div class="container">
+
+<?php echo get_template_directory_uri(); ?>
