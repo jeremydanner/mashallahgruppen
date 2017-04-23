@@ -2,6 +2,13 @@
 /*
 Template name: About
 */
+
+/*
+*   Author @ https://HandelsMarketing.se
+*
+*   (c) Mashallahgruppen
+*
+*/
 ?>
 
 <?php get_header(); ?>
