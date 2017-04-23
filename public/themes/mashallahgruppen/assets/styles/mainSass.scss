@@ -1,7 +1,10 @@
 /*
-Author @ https://HandelsMarketing.se
-
-The Main Scss for http://www.mashallahgruppen.se/
+*   Author @ https://HandelsMarketing.se
+*
+*   (c) Mashallahgruppen
+*
+*   The Main Scss for http://www.mashallahgruppen.se/
+*
 */
 
 // TODO: mediaquery for thubmnail and navbar. The button dosent dit the navbar in responsive view
@@ -17,6 +20,9 @@ $mashallahOrange: #ff9d00;
 
 // rgb(241, 209, 255)
 $buttonPink: #f1d1ff;
+
+// rgb(245, 224, 255)
+$buttonPinkHover: #f5e0ff;
 
 // rgb(95, 95, 95)
 $mainTextColor: #5f5f5f;
@@ -106,4 +112,37 @@ img.hero {
     h1 {
         text-align: center;
     }
-}
+} // end .colInnerWrapper
+
+.footerWrapper {
+    margin: 50px 0 0 0;
+    background-color: $primaryBackgroundColor;
+    color: $mainTextColor;
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        padding: 25px;
+        align-items: center;
+
+        span.footerLeft {
+            a {
+                font-size: 21px;
+                font-family: $headerFont;
+            }
+        }
+
+        span.footerRight {
+            a {
+                padding: 10px 40px;
+                background-color: $buttonPink;
+                border-radius: 5px;
+                transition: 0.5s;
+            }
+            a:hover {
+                background-color: $buttonPinkHover;
+                text-decoration: none;
+            }
+        }
+    }
+}// end footer

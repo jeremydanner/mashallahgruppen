@@ -1,7 +1,10 @@
 /*
-Author @ https://HandelsMarketing.se
-
-The Main Scss for http://www.mashallahgruppen.se/
+*   Author @ https://HandelsMarketing.se
+*
+*   (c) Mashallahgruppen
+*
+*   The Main Scss for http://www.mashallahgruppen.se/
+*
 */
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
@@ -62,5 +65,26 @@ img.hero {
   margin: 0 auto; }
   .colInnerWrapper h1 {
     text-align: center; }
+
+.footerWrapper {
+  margin: 50px 0 0 0;
+  background-color: #ffffff;
+  color: #5f5f5f; }
+  .footerWrapper .footer {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    align-items: center; }
+    .footerWrapper .footer span.footerLeft a {
+      font-size: 21px;
+      font-family: "Roboto", sans-serif; }
+    .footerWrapper .footer span.footerRight a {
+      padding: 10px 40px;
+      background-color: #f1d1ff;
+      border-radius: 5px;
+      transition: 0.5s; }
+    .footerWrapper .footer span.footerRight a:hover {
+      background-color: #f5e0ff;
+      text-decoration: none; }
 
 /*# sourceMappingURL=mainSass.css.map */
