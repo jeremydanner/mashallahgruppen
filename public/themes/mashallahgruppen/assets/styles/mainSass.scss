@@ -89,13 +89,6 @@ img.thumbnail {
     height: 40px;
 }
 
-.headerHero {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
 img.hero {
     width: 100%;
     height: auto;
@@ -111,6 +104,10 @@ img.hero {
 
     h1 {
         text-align: center;
+    }
+
+    h1.left {
+        text-align: left;
     }
 } // end .colInnerWrapper
 
@@ -143,7 +140,7 @@ img.hero {
         .latestNews {
 
             img {
-                width: 275px;
+                width: 100%;
                 height: auto;
             }
         }
