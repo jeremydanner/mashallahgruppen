@@ -26,7 +26,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
     <meta name="apple-mobile-web-app-title" content="Mashallahgruppen">
-    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/public/applicationLogos/192.png">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/public/applicationLogos/144.png">
 
     <!-- Add your bookmark icon hear -->
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/public/logoMashallagruppen.png">
