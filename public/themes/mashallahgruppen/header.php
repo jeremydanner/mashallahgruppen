@@ -26,7 +26,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
     <meta name="apple-mobile-web-app-title" content="Mashallahgruppen">
-    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/public/applicationLogos/144.png">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/public/applicationLogos/192.png">
 
     <!-- Add your bookmark icon hear -->
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/public/logoMashallagruppen.png">
@@ -45,7 +45,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/"><img class="thumbnail" src="<?php echo get_template_directory_uri(); ?>/public/logoMashallagruppen.png" alt=""></a>
+        <a class="navbar-brand" href="/"><img class="thumbnail" src="<?php echo get_template_directory_uri(); ?>/public/OriginalLogoMashallagruppen.png" alt=""></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
