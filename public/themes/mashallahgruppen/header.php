@@ -58,7 +58,7 @@
                 <?php endforeach; ?>
                 <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?> dropdown">
                     <span class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="">Språk</span>
+                        <span>Select Language <span class="languageChange"></span><!--The languages ar set in javascript--></span>
                     </span>
 
                     <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">

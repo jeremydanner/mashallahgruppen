@@ -9,9 +9,6 @@ Template name: Home
 *   (c) Mashallahgruppen
 *
 */
-
-// https://www.advancedcustomfields.com/resources/repeater/
-echo "https://www.advancedcustomfields.com/resources/repeater/";
 ?>
 
 <?php get_header(); ?>
@@ -22,22 +19,26 @@ echo "https://www.advancedcustomfields.com/resources/repeater/";
 
 <div class="container">
 
-    <div class="rowWrapper">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="colInnerWrapper">
-                    <h1><?php the_field('indexTitle'); ?></h1>
+    <?php if (have_rows('indexBody')): ?>
+        <?php while (have_rows('indexBody')): the_row(); ?>
+            <div class="rowWrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="colInnerWrapper">
+                            <h1><?php the_sub_field('title') ?></h1>
 
-                    <?php the_field('indexIntroText'); ?>
-                </div>
-
-                <div class="circleWrapper">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
+                            <p><?php the_sub_field('body') ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php endwhile; ?>
+    <?php endif; ?>
+
+    <div class="circleWrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
     </div>
 
     <div class="latestNewsWrapper">
