@@ -1,0 +1,38 @@
+//  Default styles for all elements on all pages
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    background-color: $primaryBackgroundColor;
+}
+
+p, a, span {
+    font-family: $mainParagraphFont;
+    color: $mainTextColor;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font-family: $headerFont;
+    color: $mainTextColor;
+}
+
+button {
+    background-color: $buttonPink;
+    border-radius: 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
