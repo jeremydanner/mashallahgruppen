@@ -68,6 +68,10 @@ img.hero {
     text-align: center; }
   .colInnerWrapper h1.left {
     text-align: left; }
+  .colInnerWrapper h2 {
+    text-align: center; }
+  .colInnerWrapper h2.left {
+    text-align: left; }
 
 .circleWrapper {
   display: flex;

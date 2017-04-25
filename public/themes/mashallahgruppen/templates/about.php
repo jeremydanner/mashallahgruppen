@@ -14,47 +14,26 @@ Template name: About
 <?php get_header(); ?>
 
 <div class="headerHero">
-    <img class="hero" src="<?php the_field('hero'); ?>" />
+    <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
 </div>
 
 <div class="container">
 
-    <div class="rowWrapper">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="colInnerWrapper">
-                    <h1 class="left"><?php the_field('mainTitle'); ?></h1>
+    <?php if (have_rows('aboutBody')): ?>
+        <?php while (have_rows('aboutBody')): the_row(); ?>
+            <div class="rowWrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="colInnerWrapper">
+                            <h2 class="left"><?php the_sub_field('title'); ?></h2>
 
-                    <?php the_field('mainBody'); ?>
+                            <p><?php the_sub_field('body') ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="rowWrapper">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="colInnerWrapper">
-                    <h2><?php the_field('subTitle'); ?></h2>
-
-                    <?php the_field('subBody'); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="rowWrapper">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="colInnerWrapper">
-                    <h2><?php the_field('subTitle2'); ?></h2>
-
-                    <?php the_field('subBody2'); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
+        <?php endwhile; ?>
+    <?php endif; ?>
 
 </div><!-- End Container -->
 
