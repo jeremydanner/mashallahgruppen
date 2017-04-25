@@ -1,0 +1,20 @@
+// Change color and font for the site title in navbar
+.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+    color: $mainTextColor;
+    font-family: $headerFont;
+}
+
+// Change color and font for the links in navbar
+.navbar-light .navbar-nav .nav-link {
+    color: $mainTextColor;
+    font-family: $headerFont;
+    cursor: pointer;
+}
+
+// style element in dropdownMenu
+.dropdownMenu {
+    box-shadow: $boxShadow;
+    margin: 0 0 0 8px;
+    border: 0;
+    border-radius: 1px;
+}

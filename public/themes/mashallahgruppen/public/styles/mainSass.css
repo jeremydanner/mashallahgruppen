@@ -1,1 +1,122 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);body{margin:0;min-height:100vh;padding:0;position:relative;background-color:#fff}a,p,span{font-family:"Roboto Slab",serif;color:#5f5f5f}button,h1,h2,h3,h4,h5,h6{font-family:Roboto,sans-serif;color:#5f5f5f}button{background-color:#f1d1ff;border-radius:2px;padding:5px;cursor:pointer}a{text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}.navbar-light .navbar-brand,.navbar-light .navbar-toggler{color:#5f5f5f;font-family:Roboto,sans-serif}.navbar-light .navbar-nav .nav-link{color:#5f5f5f;font-family:Roboto,sans-serif}img.thumbnail{height:40px}img.hero{width:100%;height:auto}.rowWrapper{margin:100px auto}.colInnerWrapper{max-width:700px;margin:0 auto}.colInnerWrapper h1{text-align:center}.colInnerWrapper h1.left{text-align:left}.circleWrapper{display:flex;justify-content:center;margin:100px auto 0 auto}.circleWrapper .circle{width:50px;height:50px;margin:15px;border-radius:50px;background-color:#ff9e00}.latestNewsWrapper{width:100%;display:flex;flex-direction:column}.latestNewsWrapper h2{display:flex;justify-content:center;margin:0 auto 50px auto}.latestNewsWrapper .row .latestNews img{width:100%;height:auto;padding:5px}.footerWrapper{background-color:#f5f5f5;margin:50px 0 0 0;color:#5f5f5f;width:100%;border-top:1px solid #f1d1ff}.footerWrapper .footer{display:flex;justify-content:center;padding:50px 25px;align-items:center}.footerWrapper .footer span.footerLeft a{font-size:21px;font-family:Roboto,sans-serif}.footerWrapper .footer span.footerRight a{padding:10px 40px;background-color:#f1d1ff;border-radius:5px;transition:.5s}.footerWrapper .footer span.footerRight a:hover{background-color:#f5e0ff;text-decoration:none}
+/*
+*   Author @ https://HandelsMarketing.se
+*
+*   (c) Mashallahgruppen
+*
+*   The Main Scss for http://www.mashallahgruppen.se/
+*
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+  color: #5f5f5f;
+  font-family: "Roboto", sans-serif; }
+
+.navbar-light .navbar-nav .nav-link {
+  color: #5f5f5f;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer; }
+
+.dropdownMenu {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin: 0 0 0 8px;
+  border: 0;
+  border-radius: 1px; }
+
+/*
+*   Style for the hero img in the top of every page
+*/
+img.thumbnail {
+  height: 40px; }
+
+img.hero {
+  width: 100%;
+  height: auto; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  background-color: #ffffff; }
+
+p, a, span {
+  font-family: "Roboto Slab", serif;
+  color: #5f5f5f; }
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Roboto", sans-serif;
+  color: #5f5f5f; }
+
+button {
+  background-color: #f1d1ff;
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: underline; }
+
+.rowWrapper {
+  margin: 100px auto; }
+
+.colInnerWrapper {
+  max-width: 700px;
+  margin: 0 auto; }
+  .colInnerWrapper h1 {
+    text-align: center; }
+  .colInnerWrapper h1.left {
+    text-align: left; }
+
+.circleWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto 0 auto; }
+  .circleWrapper .circle {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 50px;
+    background-color: #ff9e00; }
+
+.latestNewsWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .latestNewsWrapper h2 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 50px auto; }
+  .latestNewsWrapper .row .latestNews img {
+    width: 100%;
+    height: auto;
+    padding: 5px; }
+
+.footerWrapper {
+  background-color: #f5f5f5;
+  margin: 50px 0 0 0;
+  color: #5f5f5f;
+  width: 100%;
+  border-top: 1px solid #f1d1ff; }
+  .footerWrapper .footer {
+    display: flex;
+    justify-content: center;
+    padding: 50px 25px;
+    align-items: center; }
+    .footerWrapper .footer span.footerLeft a {
+      font-size: 21px;
+      font-family: "Roboto", sans-serif; }
+    .footerWrapper .footer span.footerRight a {
+      padding: 10px 40px;
+      background-color: #f1d1ff;
+      border-radius: 5px;
+      transition: 0.5s; }
+    .footerWrapper .footer span.footerRight a:hover {
+      background-color: #f5e0ff;
+      text-decoration: none; }
+
+/*# sourceMappingURL=mainSass.css.map */

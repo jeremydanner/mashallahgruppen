@@ -56,6 +56,17 @@
                         </a><!-- /nav-link -->
                     </li><!-- /nav-item -->
                 <?php endforeach; ?>
+                <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?> dropdown">
+                    <span class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="">Språk</span>
+                    </span>
+
+                    <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Svenska</a>
+                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="#">Arabic</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

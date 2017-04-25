@@ -9,6 +9,9 @@ Template name: Home
 *   (c) Mashallahgruppen
 *
 */
+
+// https://www.advancedcustomfields.com/resources/repeater/
+echo "https://www.advancedcustomfields.com/resources/repeater/";
 ?>
 
 <?php get_header(); ?>
