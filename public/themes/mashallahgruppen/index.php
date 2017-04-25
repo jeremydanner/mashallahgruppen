@@ -14,7 +14,7 @@ Template name: Home
 <?php get_header(); ?>
 
 <div class="headerHero">
-    <img class="hero" src="<?php the_field('hero'); ?>" />
+    <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
 </div>
 
 <div class="container">

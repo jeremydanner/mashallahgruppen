@@ -9,33 +9,8 @@
 
 // TODO: mediaquery for thubmnail and navbar. The button dosent dit the navbar in responsive view
 
-// rgb(245, 245, 245)
-$primaryMenyBackgroundColor: #f5f5f5;
-
-// rgb(255, 255, 255)
-$primaryBackgroundColor: #ffffff;
-
-// rgb(255, 158, 0)
-$mashallahOrange: #ff9e00;
-
-// rgb(241, 209, 255)
-$buttonPink: #f1d1ff;
-
-// rgb(245, 224, 255)
-$buttonPinkHover: #f5e0ff;
-
-// rgb(95, 95, 95)
-$mainTextColor: #5f5f5f;
-
-$boxShadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
-// Roboto | https://fonts.google.com/specimen/Roboto
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-$headerFont: 'Roboto', sans-serif;
-
-// Roboto slab | https://fonts.google.com/specimen/Roboto+Slab?selection.family=Roboto+Slab
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
-$mainParagraphFont: 'Roboto Slab', serif;
+// Varieables for the scss. Important at top
+@import 'vars';
 
 //Default styles for all elements on all pages. path _primary.scss
 @import 'primary';

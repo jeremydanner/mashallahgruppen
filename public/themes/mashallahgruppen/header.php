@@ -42,31 +42,46 @@
 
     <!-- Bootsrap 4 navbar -->
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #f5f5f5;">
+
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <a class="navbar-brand" href="/"><img class="thumbnail" src="<?php echo get_template_directory_uri(); ?>/public/OriginalLogoMashallagruppen.png" alt=""></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <?php foreach (get_pages() as $page): ?>
-                    <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?>">
-                        <a class="nav-link" href="<?php echo get_permalink($page); ?>">
-                            <?php echo $page->post_title; ?>
-                        </a><!-- /nav-link -->
-                    </li><!-- /nav-item -->
-                <?php endforeach; ?>
-                <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?> dropdown">
-                    <span class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Select Language <span class="languageChange"></span><!--The languages ar set in javascript--></span>
-                    </span>
 
-                    <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Svenska</a>
-                        <a class="dropdown-item" href="#">English</a>
-                        <a class="dropdown-item" href="#">Arabic</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+            <ul class="navbar-nav mr-auto">
+
+                <?php
+                // sorts the menu after order in admin page
+                $pages = array (
+                    'sort_order' => 'asc',
+                    'sort_column' => 'menu_order');
+                    ?>
+
+                    <?php foreach (get_pages($pages) as $page): ?>
+                        <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo get_permalink($page); ?>">
+                                <?php echo $page->post_title; ?>
+                            </a><!-- /nav-link -->
+                        </li><!-- /nav-item -->
+                    <?php endforeach; ?>
+
+                    <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?> dropdown">
+                        <span class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Select Language <span class="languageChange"></span><!--The languages ar set in javascript--></span>
+                        </span>
+
+                        <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Svenska</a>
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Arabic</a>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
