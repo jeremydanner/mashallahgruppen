@@ -91,6 +91,13 @@ img.hero {
     height: auto;
     padding: 5px; }
 
+.fields img {
+  width: 100%;
+  height: auto; }
+
+.fields p {
+  text-align: center; }
+
 .footerWrapper {
   background-color: #f5f5f5;
   margin: 50px 0 0 0;
