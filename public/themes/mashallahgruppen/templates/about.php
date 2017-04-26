@@ -25,7 +25,7 @@ Template name: About
                 <div class="row">
                     <div class="col-md-12">
                         <div class="colInnerWrapper">
-                            <h2 class="left"><?php the_sub_field('title'); ?></h2>
+                            <h2><?php the_sub_field('title'); ?></h2>
 
                             <p><?php the_sub_field('body') ?></p>
                         </div>

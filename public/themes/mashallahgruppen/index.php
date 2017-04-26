@@ -25,7 +25,7 @@ Template name: Home
                 <div class="row">
                     <div class="col-md-12">
                         <div class="colInnerWrapper">
-                            <h1><?php the_sub_field('title') ?></h1>
+                            <h1 class="alignCenter"><?php the_sub_field('title') ?></h1>
 
                             <p><?php the_sub_field('body') ?></p>
                         </div>

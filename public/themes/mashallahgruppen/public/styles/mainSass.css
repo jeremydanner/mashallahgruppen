@@ -64,14 +64,8 @@ img.hero {
 .colInnerWrapper {
   max-width: 700px;
   margin: 0 auto; }
-  .colInnerWrapper h1 {
+  .colInnerWrapper .alignCenter {
     text-align: center; }
-  .colInnerWrapper h1.left {
-    text-align: left; }
-  .colInnerWrapper h2 {
-    text-align: center; }
-  .colInnerWrapper h2.left {
-    text-align: left; }
 
 .circleWrapper {
   display: flex;
