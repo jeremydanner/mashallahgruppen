@@ -13,9 +13,13 @@
         align-items: center;
 
         span.footerLeft {
-            a {
-                font-size: 21px;
-                font-family: $headerFont;
+
+            iframe {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                box-shadow: $boxShadow;
+                pointer-events: none;
             }
         }
 
