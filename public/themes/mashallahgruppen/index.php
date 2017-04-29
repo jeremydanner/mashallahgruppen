@@ -65,5 +65,7 @@ Template name: Home
     </div>
 
 </div><!-- End Container -->
+
 <script src="https://snapwidget.com/js/snapwidget.js"></script>
+
 <?php get_footer();
