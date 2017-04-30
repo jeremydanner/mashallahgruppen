@@ -5,30 +5,37 @@
 *
 */
 
+'use strict';
 
 /*
 * js for changing language in the manu
 */
-const languages = [
-  'Svenska',
-  'English',
-  'Arabic'
-];
-const languageChange = document.querySelector('.languageChange');
+// const languages = [
+//   'Svenska',
+//   'English',
+//   'Arabic'
+// ];
+// const languageChange = document.querySelector('.languageChange');
+//
+// for (let i = 0; i < languages.length; i++) {
+//   function changeLanguage() {
+//     languageChange.innerHTML = languages[i];
+//     setTimeout(3000)
+//   }
+//
+//   changeLanguage();
+// }
 
-for (let i = 0; i < languages.length; i++) {
-  function changeLanguage() {
-    languageChange.innerHTML = languages[i];
-    setTimeout(3000)
-  }
 
-  changeLanguage();
+/*
+*   js for contact form
+*/
+const alert = document.querySelector('.alert-success');
+
+function removeBanner() {
+  alert.remove();
 }
 
-
-
-
-
-
-
-// LOGGA 1,5 timmar
+if (alert !== null && alert !== '') {
+  setTimeout(removeBanner, 4000);
+}

@@ -7,7 +7,6 @@ Template name: Contact
 *   Author @ https://HandelsMarketing.se
 *
 *   (c) Mashallahgruppen
-*
 */
 ?>
 
@@ -15,6 +14,8 @@ Template name: Contact
 
 // logic for the contact form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // if all fiealds are set
     if (isset($_POST['fullName']) &&
     isset($_POST['phoneNumbe']) &&
     isset($_POST['email']) &&
@@ -23,7 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($_POST['fullName'] && $_POST['phoneNumbe'] && $_POST['email'] && $_POST['commpany'] && $_POST['message'] !== '') {
             echo $_POST['message'];
-            $message = 'grattis';
+            $messageSuccess = 'Tack ' . $_POST['fullName'] . ', ditt medelande är skickat till oss!';
+        } else {
+            $messageDanger = 'Du måste fylla i alla fälten';
         }
 
     }
@@ -36,9 +39,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <div class="container">
-    <?php if (isset($message)): ?>
+
+    <!-- Flash message success -->
+    <?php if (isset($messageSuccess)): ?>
         <div class="alert alert-success" role="alert">
-            <strong><?php echo $message ?></strong>
+            <strong><?= $messageSuccess; ?></strong>
+        </div>
+    <?php endif; ?>
+
+    <!-- Flash message Danger -->
+    <?php if (isset($messageDanger)): ?>
+        <div class="alert alert-danger" role="alert">
+            <strong><?= $messageDanger; ?></strong>
         </div>
     <?php endif; ?>
 
@@ -76,38 +88,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </div>
 
+    <!-- Contact form -->
     <div class="row">
         <div class="col-md-12">
-            <div class="rowWrapper">
-                <form class="" action="/kontakt" method="post">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" name="fullName" placeholder="Namn">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="number" name="phoneNumbe" placeholder="Telefon">
-                        </div>
+
+            <form action="/kontakt" method="post">
+
+                <div class="row centerInput">
+                    <div class="col-md-6">
+                        <input type="text" name="fullName" placeholder="Namn">
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="email" name="email" placeholder="exempel@exempel.com">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="commpany" placeholder="Företag">
-                        </div>
+                    <div class="col-md-6">
+                        <input type="number" name="phoneNumbe" placeholder="Telefon">
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <textarea name="message" rows="8" cols="60" placeholder="Medelande"></textarea>
-                        </div>
+                </div>
+
+                <div class="row centerInput">
+                    <div class="col-md-6">
+                        <input type="email" name="email" placeholder="exempel@exempel.com">
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="submit" name="button">Skicka</button>
-                        </div>
+                    <div class="col-md-6">
+                        <input type="text" name="commpany" placeholder="Företag">
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <div class="row centerInput">
+                    <div class="col-md-12">
+                        <textarea name="message" rows="8" cols="60" placeholder="Medelande..."></textarea>
+                    </div>
+                </div>
+
+                <div class="row centerInput">
+                    <div class="col-md-12">
+                        <button type="submit" name="button">Skicka</button>
+                    </div>
+                </div>
+
+            </form>
+
         </div>
     </div>
 

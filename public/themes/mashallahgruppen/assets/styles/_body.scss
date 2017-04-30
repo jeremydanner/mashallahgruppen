@@ -65,3 +65,49 @@
     }
 
 }
+
+// css for the contact form /Kontakt
+.centerInput {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: $mainTextColor;
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+        background-color: $formBackgroundColor;
+        border: 0;
+    }
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+        background-color: $formBackgroundColor;
+        border: 0;
+    }
+    button {
+        width: 100%;
+        padding: 10px 40px;
+        border-radius: 5px;
+        background-color: $buttonPink;
+        margin: 5px 0;
+        border: 0;
+        transition: 0.2s;
+    }
+    button:hover {
+        box-shadow: $boxShadow;
+    }
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    margin: 10px auto;
+    height: 45px;
+    align-items: center;
+} // end contact form

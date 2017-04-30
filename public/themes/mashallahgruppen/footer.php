@@ -29,6 +29,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 <!-- the public folder is the root -->
-<script src="/themes/mashallahgruppen/assets/js/main.js"></script>
+<script src="<?= get_template_directory_uri(); ?>/assets/js/main.js"></script>
+<?= get_template_directory_uri(); ?>/assets/js/main.js
 </body>
 </html>
