@@ -5,7 +5,7 @@
 *   (c) Mashallahgruppen
 *
 */
- ?>
+?>
 <div class="row footerWrapper">
 
     <div class="col-md-4 footer">
@@ -30,6 +30,5 @@
 
 <!-- the public folder is the root -->
 <script src="<?= get_template_directory_uri(); ?>/assets/js/main.js"></script>
-<?= get_template_directory_uri(); ?>/assets/js/main.js
 </body>
 </html>

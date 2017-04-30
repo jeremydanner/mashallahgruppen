@@ -12,28 +12,43 @@ Template name: Contact
 
 <?php get_header();
 
+// TODO: Email Dose not sent from localhost. Test function when on server.
+// TODO: Validate email in php
+// TODO: Validate email in Javascript
+
 // logic for the contact form
+$messageSent = false;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // if all fiealds are set
-    if (isset($_POST['fullName']) &&
-    isset($_POST['phoneNumbe']) &&
-    isset($_POST['email']) &&
-    isset($_POST['commpany']) &&
-    isset($_POST['message'])) {
+    if (isset($_POST['fullName']) && isset($_POST['phoneNumber']) &&
+    isset($_POST['email']) && isset($_POST['commpany']) && isset($_POST['message'])) {
 
-        if ($_POST['fullName'] && $_POST['phoneNumbe'] && $_POST['email'] && $_POST['commpany'] && $_POST['message'] !== '') {
-            echo $_POST['message'];
+        if ($_POST['fullName'] && $_POST['phoneNumber'] && $_POST['email'] &&
+        $_POST['commpany'] && $_POST['message'] !== '') {
+
+            //$emailAdress = the_field('email');
+            //$emailSubject = 'Från: ' . $_POST['fullName'];
+            $emailMessage = wordwrap('Medelande: ' . $_POST['message'] . ' Från: ' . $_POST['fullName'] . ' tel: ' . $_POST['phoneNumber'] . ' epost: ' . $_POST['email'], 70);
+
+            mail('jeremy.danner@HandelsMarketing.se', 'Från webmail server', 'test mail');
+
+            //die(var_dump($emailMessage));
+
             $messageSuccess = 'Tack ' . $_POST['fullName'] . ', ditt medelande är skickat till oss!';
+
         } else {
             $messageDanger = 'Du måste fylla i alla fälten';
-        }
+        } // end checing if string is !== ''
 
-    }
-}
+    } // end checking if $_POST isset
+
+} // end server REQUEST_METHOD
 
 ?>
 
+<!-- Hero image -->
 <div class="headerHero">
     <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
 </div>
@@ -74,16 +89,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="col-md-4">
             <div class="colInnerWrapper">
-                <a href="<?php the_field('email') ?>"><?php the_field('email') ?></a>
+                <a href="<?php the_field('email'); ?>"><?php the_field('email') ?></a>
             </div>
         </div>
 
         <div class="col-md-4">
-            <a href="<?php the_field('phone') ?>"><?php the_field('phone') ?></a>
+            <a href="<?php the_field('phone'); ?>"><?php the_field('phone') ?></a>
         </div>
 
         <div class="col-md-4">
-            <a href="<?php the_field('adress') ?>"><?php the_field('adress') ?></a>
+            <a href="<?php the_field('adress'); ?>"><?php the_field('adress') ?></a>
         </div>
 
     </div>
@@ -96,45 +111,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="row centerInput">
                     <div class="col-md-6">
-                        <input type="text" name="fullName" placeholder="Namn">
+                        <input class="contactFullName" type="text" name="fullName" placeholder="Namn"> <span class="alert-danger">Not a name</span>
                     </div>
                     <div class="col-md-6">
-                        <input type="number" name="phoneNumbe" placeholder="Telefon">
+                        <input class="contactPhoneNumber" type="number" name="phoneNumber" placeholder="Telefon"> <span class="alert-danger"><span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row centerInput">
-                    <div class="col-md-6">
-                        <input type="email" name="email" placeholder="exempel@exempel.com">
+                    <div class="row centerInput">
+                        <div class="col-md-6">
+                            <input class="contactEmail" type="email" name="email" placeholder="exempel@exempel.com"> <span class="alert-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="contactCommpany" type="text" name="commpany" placeholder="Företag (frivillig)"> <span class="alert-danger">not a command</span>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="commpany" placeholder="Företag">
+
+                    <div class="row centerInput">
+                        <div class="col-md-12">
+                            <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="Medelande..."></textarea> <span class="alert-danger">Not a message</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row centerInput">
-                    <div class="col-md-12">
-                        <textarea name="message" rows="8" cols="60" placeholder="Medelande..."></textarea>
+                    <div class="row centerInput">
+                        <div class="col-md-12">
+                            <button class="contactSubmit" type="submit" name="button">Skicka</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row centerInput">
-                    <div class="col-md-12">
-                        <button type="submit" name="button">Skicka</button>
-                    </div>
-                </div>
+                </form>
 
-            </form>
-
+            </div>
         </div>
-    </div>
 
-</div><!-- End container-->
+    </div><!-- End container-->
 
-<?php
-
-get_footer();
-
-
-
-?>
+    <?php get_footer(); ?>
