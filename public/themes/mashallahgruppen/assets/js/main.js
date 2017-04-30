@@ -25,17 +25,3 @@
 //
 //   changeLanguage();
 // }
-
-
-/*
-*   js for contact form
-*/
-const alert = document.querySelector('.alert-success');
-
-function removeBanner() {
-  alert.remove();
-}
-
-if (alert !== null && alert !== '') {
-  setTimeout(removeBanner, 4000);
-}

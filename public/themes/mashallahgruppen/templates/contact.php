@@ -111,25 +111,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="row centerInput">
                     <div class="col-md-6">
-                        <input class="contactFullName" type="text" name="fullName" placeholder="Namn"> <span class="alert-danger">Not a name</span>
+                        <input class="contactFullName" type="text" name="fullName" placeholder="Namn"> <span class="alert-danger spanFullName"></span>
                     </div>
                     <div class="col-md-6">
-                        <input class="contactPhoneNumber" type="number" name="phoneNumber" placeholder="Telefon"> <span class="alert-danger"><span>
+                        <input class="contactPhoneNumber" type="number" name="phoneNumber" placeholder="Telefon"> <span class="alert-danger spanPhoneNumber"><span>
                         </div>
                     </div>
 
                     <div class="row centerInput">
                         <div class="col-md-6">
-                            <input class="contactEmail" type="email" name="email" placeholder="exempel@exempel.com"> <span class="alert-danger"></span>
+                            <input class="contactEmail" type="email" name="email" placeholder="exempel@exempel.com"> <span class="alert-danger spnaEmail"></span>
                         </div>
                         <div class="col-md-6">
-                            <input class="contactCommpany" type="text" name="commpany" placeholder="Företag (frivillig)"> <span class="alert-danger">not a command</span>
+                            <input class="contactCommpany" type="text" name="commpany" placeholder="Företag (frivillig)"> <span class="alert-danger spanCompany"></span>
                         </div>
                     </div>
 
                     <div class="row centerInput">
                         <div class="col-md-12">
-                            <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="Medelande..."></textarea> <span class="alert-danger">Not a message</span>
+                            <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="Medelande..."></textarea> <span class="alert-danger spanMessage"></span>
                         </div>
                     </div>
 
@@ -145,5 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
     </div><!-- End container-->
+
+    <script src="<?= get_template_directory_uri(); ?>/assets/js/formValidation.js"></script>
 
     <?php get_footer(); ?>
