@@ -19,16 +19,8 @@ Template name: Partners
         <div class="row">
             <div class="col-md-12">
                 <div class="colInnerWrapper">
-                    <?php // the_field('indexIntroText'); ?>
-
-                    <p>
-                        Na na na Batman! na na na na na na na na na na na na Batman! na na na na na na na na na na na na
-                        na na na na na na na na na Batman! na na na na na na na na na na na na na na na na na na na na
-                        na Batman! na na na na na na na na na na na na na na na na na na Batman! na na na na na na
-                        Batman! Batman! na na na na na na na na na na na na na na na na na na Batman! na na na na na na
-                        na na na Batman! na na na na na na Batman! na na na na na na na na na Batman! na na na na na na
-                        na na na
-                    </p>
+                    <h1><?php the_field('title'); ?></h1>
+                    <p><?php the_field('body') ?></p>
                 </div>
             </div>
         </div>
@@ -36,33 +28,15 @@ Template name: Partners
 
     <div class="latestNewsWrapper">
         <div class="row">
-            <div class="col-md-4 latestNews">
-                <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/s960x960/17918029_783359525163310_8320188407829282925_o.jpg?oh=6cf6dde5e71956e5aa527ef9d145e22e&oe=597D0C14" alt="">
-            </div>
-
-            <div class="col-md-4 latestNews">
-                <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/s960x960/17918029_783359525163310_8320188407829282925_o.jpg?oh=6cf6dde5e71956e5aa527ef9d145e22e&oe=597D0C14" alt="">
-            </div>
-
-            <div class="col-md-4 latestNews">
-                <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/s960x960/17918029_783359525163310_8320188407829282925_o.jpg?oh=6cf6dde5e71956e5aa527ef9d145e22e&oe=597D0C14" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div class="latestNewsWrapper">
-        <div class="row">
-            <div class="col-md-4 latestNews">
-                <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/s960x960/17918029_783359525163310_8320188407829282925_o.jpg?oh=6cf6dde5e71956e5aa527ef9d145e22e&oe=597D0C14" alt="">
-            </div>
-
-            <div class="col-md-4 latestNews">
-                <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/s960x960/17918029_783359525163310_8320188407829282925_o.jpg?oh=6cf6dde5e71956e5aa527ef9d145e22e&oe=597D0C14" alt="">
-            </div>
-
-            <div class="col-md-4 latestNews">
-                <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/s960x960/17918029_783359525163310_8320188407829282925_o.jpg?oh=6cf6dde5e71956e5aa527ef9d145e22e&oe=597D0C14" alt="">
-            </div>
+            <?php if (have_rows('logos')): ?>
+                <?php while (have_rows('logos')): the_row(); ?>
+                    <div class="col-md-4 latestNews">
+                        <a href="<?php the_sub_field('partnerLink'); ?> target="_blank">
+                            <img src="<?php the_sub_field('logo') ?>" alt="<?php the_sub_field('name') ?>">
+                        </a>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 
