@@ -147,12 +147,22 @@ img.hero {
     justify-content: center;
     padding: 50px 25px;
     align-items: center; }
-    .footerWrapper .footer span.footerLeft iframe {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-      pointer-events: none; }
+    .footerWrapper .footer span.footerLeft {
+      text-align: center; }
+      .footerWrapper .footer span.footerLeft p {
+        margin: 5px auto;
+        font-weight: lighter;
+        font-size: 12px; }
+      .footerWrapper .footer span.footerLeft img {
+        align-items: center;
+        width: 35px;
+        height: auto;
+        margin: 5px;
+        transition: 0.2s; }
+      .footerWrapper .footer span.footerLeft img:hover {
+        background-color: #f5e0ff;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        border-radius: 5px; }
     .footerWrapper .footer span.footerRight a {
       padding: 10px 40px;
       background-color: #f1d1ff;

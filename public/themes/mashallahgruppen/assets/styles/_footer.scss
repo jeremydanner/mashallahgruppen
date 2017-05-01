@@ -13,13 +13,26 @@
         align-items: center;
 
         span.footerLeft {
+            text-align: center;
 
-            iframe {
-                width: 100%;
+            p {
+                margin: 5px auto;
+                font-weight: lighter;
+                font-size: 12px;
+            }
+
+            img {
+                align-items: center;
+                width: 35px;
                 height: auto;
-                border-radius: 5px;
+                margin: 5px;
+                transition: 0.2s;
+            }
+
+            img:hover {
+                background-color: $buttonPinkHover;
                 box-shadow: $boxShadow;
-                pointer-events: none;
+                border-radius: 5px;
             }
         }
 
