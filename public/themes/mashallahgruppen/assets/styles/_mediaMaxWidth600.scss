@@ -1,0 +1,16 @@
+@media (max-width: 600px) {
+
+    .footerWrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+
+        .footer {
+            margin: 30px auto;
+            padding: 10px;
+        }
+    }
+
+}
