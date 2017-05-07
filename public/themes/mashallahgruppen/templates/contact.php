@@ -32,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //$emailSubject = 'Från: ' . $_POST['fullName'];
             $emailMessage = wordwrap('Medelande: ' . $_POST['message'] . ' Från: ' . $_POST['fullName'] . ' tel: ' . $_POST['phoneNumber'] . ' epost: ' . $_POST['email'], 70);
 
-            mail('jeremy.danner@HandelsMarketing.se', 'Från webmail server', 'test mail');
+            //mail('jeremy.danner@HandelsMarketing.se', 'Från webmail server', 'test mail');
+
+            wp_mail( 'jeremy.danner@HandelsMarketing.se', 'test', 'test');
 
             //die(var_dump($emailMessage));
 
@@ -107,20 +109,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="row">
         <div class="col-md-12">
 
-            <form action="/kontakt" method="post">
-
+            <form class="contactForm" action="/kontakt" method="post">
+                <span class="alert-warning">Fält som börjar med * är obligatoriskt</span>
                 <div class="row centerInput">
                     <div class="col-md-6">
-                        <input class="contactFullName" type="text" name="fullName" placeholder="Namn"> <span class="alert-danger spanFullName"></span>
+                        <input class="contactFullName" type="text" name="fullName" placeholder="* Namn"> <span class="alert-danger spanFullName"></span>
                     </div>
                     <div class="col-md-6">
-                        <input class="contactPhoneNumber" type="number" name="phoneNumber" placeholder="Telefon"> <span class="alert-danger spanPhoneNumber"><span>
+                        <input class="contactPhoneNumber" type="number" name="phoneNumber" placeholder="* Telefon"> <span class="alert-danger spanPhoneNumber"><span>
                         </div>
                     </div>
 
                     <div class="row centerInput">
                         <div class="col-md-6">
-                            <input class="contactEmail" type="email" name="email" placeholder="exempel@exempel.com"> <span class="alert-danger spnaEmail"></span>
+                            <input class="contactEmail" type="email" name="email" placeholder="* exempel@exempel.com"> <span class="alert-danger spnaEmail"></span>
                         </div>
                         <div class="col-md-6">
                             <input class="contactCommpany" type="text" name="commpany" placeholder="Företag (frivillig)"> <span class="alert-danger spanCompany"></span>
@@ -129,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="row centerInput">
                         <div class="col-md-12">
-                            <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="Medelande..."></textarea> <span class="alert-danger spanMessage"></span>
+                            <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="* Medelande..."></textarea> <span class="alert-danger spanMessage"></span>
                         </div>
                     </div>
 

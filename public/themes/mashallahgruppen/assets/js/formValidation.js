@@ -20,7 +20,7 @@ function removeBanner() {
 }
 
 if (alert !== null && alert !== '') {
-  setTimeout(removeBanner, 4000);
+  setTimeout(removeBanner, 7000);
 }
 
 const numbersRegex = /^\d+$/;
@@ -51,12 +51,12 @@ const spanMessage = document.querySelector('.spanMessage');
 // querySelector for submit button in contact form
 const contactSubmit = document.querySelector('.contactSubmit');
 
+// querySelector for the form. is used when preventDefault is calld to latere submit form
+const contactForm = document.querySelector('.contactForm');
+
+// prevents the form from submitting if it dosent passes validation
 function preventSubmit(event) {
   event.preventDefault(contactSubmit);
-}
-
-function stopPrevent(event) {
-  event.stopPropagation();
 }
 
 // check if name is text
@@ -66,6 +66,11 @@ contactFullName.addEventListener('keyup', () => {
     contactSubmit.addEventListener('click', preventSubmit);
   } else {
     spanFullName.innerHTML = '';
+
+    contactSubmit.addEventListener('click', submitForm => {
+      contactForm.submit();
+    });
+
   }
 });
 
@@ -76,16 +81,26 @@ contactPhoneNumber.addEventListener('keyup', () => {
     contactSubmit.addEventListener('click', preventSubmit);
   } else {
     spanPhoneNumber.innerHTML = '';
+
+    contactSubmit.addEventListener('click', submitForm => {
+      contactForm.submit();
+    });
+
   }
 });
 
 // check if email is email
 contactEmail.addEventListener('keyup', () => {
   if (!emailRegex.test(contactEmail.value)) {
-    spnaEmail.innerHTML = 'Detta är en ogiltig epost adress';
+    spnaEmail.innerHTML = contactEmail.value + ' är en ogiltig epost adress';
     contactSubmit.addEventListener('click', preventSubmit);
   } else {
     spnaEmail.innerHTML = '';
+
+    contactSubmit.addEventListener('click', submitForm => {
+      contactForm.submit();
+    });
+
   }
 });
 
@@ -96,6 +111,11 @@ contactCommpany.addEventListener('keyup', () => {
     contactSubmit.addEventListener('click', preventSubmit);
   } else {
     spanCompany.innerHTML = '';
+
+    contactSubmit.addEventListener('click', submitForm => {
+      contactForm.submit();
+    });
+
   }
 });
 
@@ -106,5 +126,10 @@ contactMessage.addEventListener('keyup', () => {
     contactSubmit.addEventListener('click', preventSubmit);
   } else {
     spanMessage.innerHTML = '';
+
+    contactSubmit.addEventListener('click', submitForm => {
+      contactForm.submit();
+    });
+
   }
 });
