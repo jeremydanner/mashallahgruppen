@@ -59,6 +59,12 @@ function preventSubmit(event) {
   event.preventDefault(contactSubmit);
 }
 
+let fullName = false;
+let phoneNumber = false;
+let email = false;
+let commpany = false;
+let message = false;
+
 // check if name is text
 contactFullName.addEventListener('keyup', () => {
   if (!textRegex.test(contactFullName.value)) {
@@ -67,10 +73,7 @@ contactFullName.addEventListener('keyup', () => {
   } else {
     spanFullName.innerHTML = '';
 
-    contactSubmit.addEventListener('click', submitForm => {
-      contactForm.submit();
-    });
-
+    fullName = true;
   }
 });
 
@@ -82,10 +85,7 @@ contactPhoneNumber.addEventListener('keyup', () => {
   } else {
     spanPhoneNumber.innerHTML = '';
 
-    contactSubmit.addEventListener('click', submitForm => {
-      contactForm.submit();
-    });
-
+    phoneNumber = true;
   }
 });
 
@@ -97,10 +97,7 @@ contactEmail.addEventListener('keyup', () => {
   } else {
     spnaEmail.innerHTML = '';
 
-    contactSubmit.addEventListener('click', submitForm => {
-      contactForm.submit();
-    });
-
+    email = true;
   }
 });
 
@@ -112,10 +109,7 @@ contactCommpany.addEventListener('keyup', () => {
   } else {
     spanCompany.innerHTML = '';
 
-    contactSubmit.addEventListener('click', submitForm => {
-      contactForm.submit();
-    });
-
+    commpany = true;
   }
 });
 
@@ -127,8 +121,13 @@ contactMessage.addEventListener('keyup', () => {
   } else {
     spanMessage.innerHTML = '';
 
-    contactSubmit.addEventListener('click', submitForm => {
-      contactForm.submit();
-    });
+    message = true;
+  }
+});
+
+
+contactSubmit.addEventListener('click', submitForm => {
+  if (fullName === true && phoneNumber === true && email === true && commpany === true && message === true) {
+    contactForm.submit();
   }
 });
