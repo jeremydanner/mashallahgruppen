@@ -7,7 +7,7 @@
 
 'use strict';
 
-// TODO: set defalt after prevent defalt is called
+// BUG: Contact form. If the validation on one field passes validation in javascript the form will be submitted....
 
 /*
 * this script onaly appers on the contact.php page. /kontakt
@@ -130,6 +130,5 @@ contactMessage.addEventListener('keyup', () => {
     contactSubmit.addEventListener('click', submitForm => {
       contactForm.submit();
     });
-
   }
 });
