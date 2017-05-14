@@ -77,9 +77,8 @@ $directory = get_template_directory_uri();
                         </span>
 
                         <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Svenska</a>
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Arabic</a>
+                            <a class="dropdown-item" href="/sv/hem">Svenska</a>
+                            <a class="dropdown-item" href="/en/home">English</a>
                         </div>
 
                     </li>

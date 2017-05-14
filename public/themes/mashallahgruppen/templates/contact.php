@@ -13,9 +13,9 @@ Template name: Contact
 
 // TODO: Email Dose not sent from localhost. Test function when on server.
 // BUG: Javascript bug allows user to senad email if one fieald passes validation
+// BUG: form dose not validate in php at all...
 
-get_header();
-?>
+get_header(); ?>
 
 <!-- Hero image -->
 <div class="headerHero">
@@ -120,19 +120,28 @@ get_header();
 
     <script src="<?= get_template_directory_uri(); ?>/assets/js/formValidation.js"></script>
 
-    <?php get_footer(); ?>
-
-
     <?php
+    get_footer();
+
     // logic for the contact form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
         // if all fiealds are set
-        if (isset($_POST['fullName']) && isset($_POST['phoneNumber']) &&
-        isset($_POST['email']) && isset($_POST['commpany']) && isset($_POST['message'])) {
 
-            if ($_POST['fullName'] && $_POST['phoneNumber'] && $_POST['email'] &&
-            $_POST['commpany'] && $_POST['message'] !== '') {
+        if (
+            isset($_POST['fullName']) &&
+            isset($_POST['phoneNumber']) &&
+            isset($_POST['email']) &&
+            isset($_POST['commpany']) &&
+            isset($_POST['message'])
+        ) {
+            // if all fields are not empty string = ''
+            if (
+                $_POST['fullName'] !== '' &&
+                $_POST['phoneNumber'] !== '' &&
+                $_POST['email'] !== '' &&
+                $_POST['commpany'] !== '' &&
+                $_POST['message'] !== ''
+            ) {
 
                 // Validates email
                 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -159,13 +168,21 @@ get_header();
                     'Medelande: ' . $_POST['message'] .
                     ' Från: ' . $_POST['fullName'] .
                     ' tel: ' . $_POST['phoneNumber'] .
-                    ' epost: ' . $_POST['email'], 70);
+                    ' epost: ' . $_POST['email'], 70
+                );
 
-                    wp_mail('jeremy.danner@HandelsMarketing.se', 'test', $emailMessage);
+                    // sends a email to the client
+                    wp_mail(
+                        'jeremy.danner@HandelsMarketing.se',
+                        'test',
+                        $emailMessage
+                    );
 
-                    //dd('jeremy.danner@HandelsMarketing.se', 'test', $emailMessage);
+                    dd('jeremy.danner@HandelsMarketing.se', 'test', $emailMessage);
 
-                    $messageSuccess = 'Tack ' . $_POST['fullName'] . ', ditt medelande är skickat till oss!';
+                    $messageSuccess =
+                    'Tack ' . $_POST['fullName'] .
+                    ', ditt medelande är skickat till oss!';
 
                 } else {
                     $messageDanger = 'Du måste fylla i alla fälten';
@@ -174,5 +191,3 @@ get_header();
             } // end checking if $_POST isset
 
         } // end server REQUEST_METHOD
-
-        ?>

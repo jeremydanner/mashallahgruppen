@@ -67,8 +67,9 @@ let message = false;
 
 // check if name is text
 contactFullName.addEventListener('keyup', () => {
-  if (!textRegex.test(contactFullName.value)) {
-    spanFullName.innerHTML = 'Endast bokstäver tillåtet A-Ö a-ö';
+  if (!textRegex.test(contactFullName.value) && contactFullName.value === '') {
+    spanFullName.innerHTML = 'Endast bokstäver tillåtet A-Ö';
+    console.log(contactFullName.value);
     contactSubmit.addEventListener('click', preventSubmit);
   } else {
     spanFullName.innerHTML = '';
@@ -125,9 +126,14 @@ contactMessage.addEventListener('keyup', () => {
   }
 });
 
-
 contactSubmit.addEventListener('click', submitForm => {
-  if (fullName === true && phoneNumber === true && email === true && commpany === true && message === true) {
+  if (
+    fullName === true &&
+    phoneNumber === true &&
+    email === true &&
+    commpany === true &&
+    message === true
+  ) {
     contactForm.submit();
   }
 });
