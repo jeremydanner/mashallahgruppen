@@ -12,7 +12,7 @@ const mix = require('laravel-mix').mix;
  */
 
 const resources = 'resources/assets';
-const themePath = 'public/themes/wordplate';
+const themePath = 'public/themes/mashallahgruppen';
 const assetsPath = `${themePath}/assets`;
 
 mix.setPublicPath(assetsPath);
