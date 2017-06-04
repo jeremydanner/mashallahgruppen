@@ -22,7 +22,7 @@ get_header(); ?>
     <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
 </div>
 
-<div class="container">
+<div class="container contactFormContainer">
 
     <!-- Flash message success -->
     <?php if (isset($messageSuccess)): ?>
@@ -117,8 +117,6 @@ get_header(); ?>
         </div>
 
     </div><!-- End container-->
-
-    <script src="<?= get_template_directory_uri(); ?>/assets/js/formValidation.js"></script>
 
     <?php
     get_footer();

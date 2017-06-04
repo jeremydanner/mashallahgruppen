@@ -19,7 +19,7 @@ mix.setPublicPath(assetsPath);
 mix.setResourceRoot('../');
 
 mix.browserSync({
-    proxy: 'wordplate.dev',
+    proxy: 'localhost:8888/sv/hem/',
     files: [
         `${themePath}/**/*.php`,
         `${assetsPath}/**/*.js`,
