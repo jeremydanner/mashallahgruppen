@@ -10,7 +10,7 @@ $directory = get_template_directory_uri();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -34,14 +34,12 @@ $directory = get_template_directory_uri();
     <!-- Add your bookmark icon hear -->
     <link rel="icon" href="<?= $directory; ?>/public/logoMashallagruppen.png">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!-- the public folder is the root -->
-    <link rel="stylesheet" href="<?= $directory; ?>/public/styles/mainSass.css">
+    <?php wp_head(); ?>
 
     <title>Mashallahgruppen</title>
 
 </head>
-<body>
+<body <?php body_class(); ?>>
 
     <!-- Bootsrap 4 navbar -->
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: #f5f5f5;">
