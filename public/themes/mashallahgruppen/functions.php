@@ -10,14 +10,15 @@ declare(strict_types=1);
 
 // Register plugin helpers.
 require template_path('library/plate.php');
+
 // Set theme defaults.
 add_action('after_setup_theme', function () {
     // Show the admin bar.
     show_admin_bar(false);
+
     // Add post thumbnails support.
     add_theme_support('post-thumbnails');
-    // Add support for post formats.
-    //add_theme_support('post-formats', ['aside', 'audio', 'gallery', 'image', 'link', 'quote', 'video']);
+
     // Add title tag theme support.
     add_theme_support('title-tag');
     // Add HTML5 support.
@@ -67,14 +68,17 @@ add_filter('wp_title', function () {
     }
     return sprintf('%s - %s', trim($post->post_title), $name);
 });
+
 // Remove JPEG compression.
 add_filter('jpeg_quality', function () {
     return 100;
 }, 10, 2);
+
 // Set custom excerpt more.
 add_filter('excerpt_more', function () {
     return '...';
 });
+
 // Set custom excerpt length.
 add_filter('excerpt_length', function () {
     return 101;
