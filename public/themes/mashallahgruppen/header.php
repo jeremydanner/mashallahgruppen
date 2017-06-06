@@ -71,7 +71,10 @@ $directory = get_template_directory_uri();
 
                     <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?> dropdown">
                         <span class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="navLink">Select Language <span class="languageChange"></span><!--The languages ar set in javascript--></span>
+                            <!--The languages are set in javascript-->
+                            <span class="navLink">Select Language</span>
+                            <!-- language links -->
+                            <span class="languageChange"></span>
                         </span>
 
                         <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">

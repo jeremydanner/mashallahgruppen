@@ -2,31 +2,49 @@
 
 // Change color and font for the site title in navbar
 .navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+  color: $mainTextColor;
+  font-family: $headerFont;
+}
+
+.active {
+  text-decoration: underline;
     color: $mainTextColor;
-    font-family: $headerFont;
 }
 
 // Change color and font for the links in navbar
 .navbar-light .navbar-nav .nav-link {
-    color: $mainTextColor;
-    font-family: $headerFont;
-    cursor: pointer;
+  color: $mainTextColor;
+  cursor: pointer;
+  font-family: $headerFont;
 }
 
 // style element in dropdownMenu
 .dropdownMenu {
-    box-shadow: $boxShadow;
-    margin: 0 0 0 8px;
-    border: 0;
-    border-radius: 1px;
+  border-radius: 1px;
+  border: 0;
+  box-shadow: $boxShadow;
+  margin: 0 0 0 8px;
 }
 
 .pullRight {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 
   .navLink {
+    font-size: 21px;
     margin: 0 10px;
+  }
+
+  .navLink:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navLink {
+    //background-color: red;
+    font-weight: 100;
+
   }
 }
