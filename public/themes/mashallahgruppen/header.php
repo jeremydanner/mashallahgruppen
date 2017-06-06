@@ -52,7 +52,7 @@ $directory = get_template_directory_uri();
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav pullRight">
 
                 <?php
                 // sorts the menu after order in admin page
@@ -63,15 +63,15 @@ $directory = get_template_directory_uri();
 
                     <?php foreach (get_pages($pages) as $page): ?>
                         <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo get_permalink($page); ?>">
-                                <?php echo $page->post_title; ?>
+                            <a class="nav-link navLink" href="<?= get_permalink($page); ?>">
+                                <?= $page->post_title; ?>
                             </a><!-- /nav-link -->
                         </li><!-- /nav-item -->
                     <?php endforeach; ?>
 
                     <li class="nav-item <?php if (is_page($page)) { echo 'active'; } ?> dropdown">
                         <span class="nav-link dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span>Select Language <span class="languageChange"></span><!--The languages ar set in javascript--></span>
+                            <span class="navLink">Select Language <span class="languageChange"></span><!--The languages ar set in javascript--></span>
                         </span>
 
                         <div class="dropdown-menu dropdownMenu" aria-labelledby="dropdownMenuLink">
