@@ -7,7 +7,7 @@
 */
 
 $directory = get_template_directory_uri();
-
+dd($_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
