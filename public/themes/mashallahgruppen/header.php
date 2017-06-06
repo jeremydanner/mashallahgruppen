@@ -7,7 +7,8 @@
 */
 
 $directory = get_template_directory_uri();
-dd($_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
+
+//require __DIR__.'/language/Language.php';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -34,6 +35,8 @@ dd($_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
     <!-- Add your bookmark icon hear -->
     <link rel="icon" href="<?= $directory; ?>/public/logoMashallagruppen.png">
 
+
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <?php wp_head(); ?>
 
     <title>Mashallahgruppen</title>
