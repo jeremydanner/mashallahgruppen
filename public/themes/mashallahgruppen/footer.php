@@ -6,6 +6,8 @@
 *
 */
 ?>
+</div> <!-- end container -->
+
 <div class="row footerWrapper">
 
     <div class="col-md-4 footer">

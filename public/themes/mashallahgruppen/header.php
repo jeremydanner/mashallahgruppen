@@ -89,3 +89,12 @@ $directory = get_template_directory_uri();
 
             </div>
         </nav>
+
+        <?php if (get_field('hero')): ?>
+            <!-- Hero image -->
+            <div class="headerHero">
+                <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
+            </div>
+        <?php endif; ?>
+
+        <div class="container">

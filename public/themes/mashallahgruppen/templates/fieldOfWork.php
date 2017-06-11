@@ -14,8 +14,6 @@ Template name: FieldOfWork
 
 <?php get_header(); ?>
 
-<div class="container">
-
     <div class="rowWrapper">
         <div class="row">
             <div class="col-md-12">
@@ -39,7 +37,5 @@ Template name: FieldOfWork
     <?php endif; ?>
 
 </div>
-
-</div><!-- End Container -->
 
 <?php get_footer();

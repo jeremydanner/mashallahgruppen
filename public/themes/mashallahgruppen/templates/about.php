@@ -13,12 +13,6 @@ Template name: About
 
 <?php get_header(); ?>
 
-<div class="headerHero">
-    <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
-</div>
-
-<div class="container">
-
     <?php if (have_rows('aboutBody')): ?>
         <?php while (have_rows('aboutBody')): the_row(); ?>
             <div class="rowWrapper">
@@ -34,7 +28,5 @@ Template name: About
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
-
-</div><!-- End Container -->
 
 <?php get_footer();

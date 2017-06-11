@@ -13,12 +13,6 @@ Template name: Home
 
 <?php get_header(); ?>
 
-<div class="headerHero">
-    <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
-</div>
-
-<div class="container">
-
     <?php if (have_rows('indexBody')): ?>
         <?php while (have_rows('indexBody')): the_row(); ?>
             <div class="rowWrapper">
@@ -63,8 +57,6 @@ Template name: Home
             <iframe src="https://snapwidget.com/embed/373963" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; "></iframe>
         </div>
     </div>
-
-</div><!-- End Container -->
 
 <script src="https://snapwidget.com/js/snapwidget.js"></script>
 

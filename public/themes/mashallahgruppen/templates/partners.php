@@ -13,8 +13,6 @@ Template name: Partners
 
 <?php get_header(); ?>
 
-<div class="container">
-
     <div class="rowWrapper">
         <div class="row">
             <div class="col-md-12">
@@ -40,6 +38,4 @@ Template name: Partners
         </div>
     </div>
 
-</div><!-- End container-->
-
-<?php get_footer();
+<?php get_footer(); ?>

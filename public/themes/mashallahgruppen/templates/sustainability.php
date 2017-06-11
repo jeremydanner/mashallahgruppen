@@ -12,11 +12,6 @@ Template name: Sustainability
 ?>
 <?php get_header(); ?>
 
-<div class="headerHero">
-    <img class="hero" src="<?php the_field('hero'); ?>" alt="<?php the_field('heroTitle'); ?>" />
-</div>
-
-<div class="container">
     <?php if (have_rows('sustainabilityBody')): ?>
         <?php while (have_rows('sustainabilityBody')): the_row(); ?>
             <div class="rowWrapper">
@@ -32,6 +27,5 @@ Template name: Sustainability
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
-</div>
 
-<?php get_footer();
+<?php get_footer(); ?>
