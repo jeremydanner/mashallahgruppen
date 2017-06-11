@@ -1,6 +1,4 @@
 'use strict';
-// BUG: Contact form. If the validation on one field passes validation in javascript the form will be submitted....
-
 /*
 * this script onaly appers on the contact.php page. /kontakt
 *   js for contact form
@@ -27,111 +25,46 @@ if (contactFormContainer) {
   // querySelector for fullName in contact form
   const contactFullName = document.querySelector('.contactFullName');
   const spanFullName = document.querySelector('.spanFullName');
+  const messageFullName = 'Ogiltiga tecken, endast bokstäver tillåtet';
 
   // querySelector for phonenumber in contact form
   const contactPhoneNumber = document.querySelector('.contactPhoneNumber');
   const spanPhoneNumber = document.querySelector('.spanPhoneNumber');
+  const messageNumber = 'Ogiltiga tecken, endast siffror tillåtet';
 
   // querySelector for fullName in contact form
   const contactEmail = document.querySelector('.contactEmail');
   const spnaEmail = document.querySelector('.spnaEmail');
+  const messageEmail = 'Ingen gilltig e-post adress';
 
   // querySelector for commpany in contact form
   const contactCommpany = document.querySelector('.contactCommpany');
   const spanCompany = document.querySelector('.spanCompany');
+  const commpanyMessage = 'Ogiltiga tecken, endast bokstäver och siffror tillåtet';
 
   // querySelector for message in contact form
   const contactMessage = document.querySelector('.contactMessage');
   const spanMessage = document.querySelector('.spanMessage');
+  const messageMessage = 'Ogiltiga tecken, endast bokstäver och siffror tillåtet';
 
-  // querySelector for submit button in contact form
-  const contactSubmit = document.querySelector('.contactSubmit');
+  function validation(input, regex, error, message) {
+    input.addEventListener('keyup', validateForm => {
+      if (!input.value) {
+        return false;
+      }
+      if (!regex.test(input.value)) {
+        error.innerHTML = message;
+        return false;
+      }
 
-  // querySelector for the form. is used when preventDefault is calld to latere submit form
-  const contactForm = document.querySelector('.contactForm');
-
-  // prevents the form from submitting if it dosent passes validation
-  function preventSubmit(event) {
-    event.preventDefault(contactSubmit);
+      error.innerHTML = '';
+      return true;
+    });
   }
-
-  let fullName = false;
-  let phoneNumber = false;
-  let email = false;
-  let commpany = false;
-  let message = false;
-
-  // check if name is text
-  contactFullName.addEventListener('keyup', () => {
-    if (!textRegex.test(contactFullName.value) && contactFullName.value === '') {
-      spanFullName.innerHTML = 'Endast bokstäver tillåtet A-Ö';
-      console.log(contactFullName.value);
-      contactSubmit.addEventListener('click', preventSubmit);
-    } else {
-      spanFullName.innerHTML = '';
-
-      fullName = true;
-    }
-  });
-
-  // check if number is number
-  contactPhoneNumber.addEventListener('keyup', () => {
-    if (!numbersRegex.test(contactPhoneNumber.value)) {
-      spanPhoneNumber.innerHTML = 'Endast siffror tillåtet 0-9';
-      contactSubmit.addEventListener('click', preventSubmit);
-    } else {
-      spanPhoneNumber.innerHTML = '';
-
-      phoneNumber = true;
-    }
-  });
-
-  // check if email is email
-  contactEmail.addEventListener('keyup', () => {
-    if (!emailRegex.test(contactEmail.value)) {
-      spnaEmail.innerHTML = contactEmail.value + ' är en ogiltig epost adress';
-      contactSubmit.addEventListener('click', preventSubmit);
-    } else {
-      spnaEmail.innerHTML = '';
-
-      email = true;
-    }
-  });
-
-  // check if company is letter or number
-  contactCommpany.addEventListener('keyup', () => {
-    if (!anyLetterOrNumberRegex.test(contactCommpany.value)) {
-      spanCompany.innerHTML = 'Endast bokstäver & siffror tillåtet A-Ö 0-9';
-      contactSubmit.addEventListener('click', preventSubmit);
-    } else {
-      spanCompany.innerHTML = '';
-
-      commpany = true;
-    }
-  });
-
-  // check if message is letter or number
-  contactMessage.addEventListener('keyup', () => {
-    if (!anyLetterOrNumberRegex.test(contactMessage.value)) {
-      spanMessage.innerHTML = 'Endast bokstäver & siffror tillåtet A-Ö 0-9';
-      contactSubmit.addEventListener('click', preventSubmit);
-    } else {
-      spanMessage.innerHTML = '';
-
-      message = true;
-    }
-  });
-
-  contactSubmit.addEventListener('click', submitForm => {
-    if (
-      fullName === true &&
-      phoneNumber === true &&
-      email === true &&
-      commpany === true &&
-      message === true
-    ) {
-      contactForm.submit();
-    }
-  });
+  validation(contactFullName, textRegex, spanFullName, messageFullName);
+  validation(contactPhoneNumber, numbersRegex, spanPhoneNumber, messageNumber);
+  validation(contactEmail, emailRegex, spnaEmail, messageEmail);
+  validation(contactCommpany, anyLetterOrNumberRegex, spanCompany, commpanyMessage);
+  validation(contactMessage, anyLetterOrNumberRegex, spanMessage, messageMessage);
 
 } // end if
