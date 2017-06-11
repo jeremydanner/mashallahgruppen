@@ -7,8 +7,6 @@
 */
 
 $directory = get_template_directory_uri();
-
-//require __DIR__.'/language/Language.php';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
