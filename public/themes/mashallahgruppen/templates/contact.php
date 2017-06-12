@@ -78,7 +78,7 @@ get_header(); ?>
                 <?php while (have_rows('input')): the_row(); ?>
 
                     <?php if (get_sub_field('typOfField') === 'email'): ?>
-                        <div class="row centerInput">
+                        <!-- <div class="row centerInput"> -->
                             <div class="col-md-6">
                                 <?php if (get_sub_field('required') === true): ?>
                                     <input type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
@@ -86,11 +86,11 @@ get_header(); ?>
                                     <input type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'text'): ?>
-                        <div class="row centerInput">
+                        <!-- <div class="row centerInput"> -->
                             <div class="col-md-6">
                                 <?php if (get_sub_field('required') === true): ?>
                                     <input type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
@@ -98,11 +98,11 @@ get_header(); ?>
                                     <input type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>">
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'number'): ?>
-                        <div class="row centerInput">
+                        <!-- <div class="row centerInput"> -->
                             <div class="col-md-6">
                                 <?php if (get_sub_field('required') === true): ?>
                                     <input type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
@@ -110,7 +110,7 @@ get_header(); ?>
                                     <input type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'textarea'): ?>

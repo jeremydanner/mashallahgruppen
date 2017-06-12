@@ -9,9 +9,9 @@ Template name: Home
 *   (c) Mashallahgruppen
 *
 */
+declare(strict_types=1);
+get_header();
 ?>
-
-<?php get_header(); ?>
 
     <?php if (have_rows('indexBody')): ?>
         <?php while (have_rows('indexBody')): the_row(); ?>
@@ -34,7 +34,6 @@ Template name: Home
         <div class="circle"></div>
         <div class="circle"></div>
     </div>
-
     <!-- <div class="latestNewsWrapper">
         <h2>Senaste nytt</h2>
         <div class="row">
@@ -52,12 +51,13 @@ Template name: Home
         </div>
     </div> -->
     <!-- SnapWidget -->
-    <div class="row">
+
+    <!-- <div class="row">
         <div class="col-md-12">
             <iframe src="https://snapwidget.com/embed/373963" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; "></iframe>
         </div>
     </div>
 
-<script src="https://snapwidget.com/js/snapwidget.js"></script>
+<script src="https://snapwidget.com/js/snapwidget.js"></script> -->
 
 <?php get_footer();
