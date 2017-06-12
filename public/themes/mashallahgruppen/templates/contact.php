@@ -70,47 +70,73 @@ get_header(); ?>
 </div>
 
 <!-- Contact form -->
-<div class="row">
-    <div class="col-md-12">
+<?php if (have_rows('input')): ?>
+    <div class="row">
+        <div class="col-md-12">
 
-        <form class="contactForm" action="/kontakt" method="post">
+            <form class="contactForm" action="/kontakt" method="post">
+                <?php while (have_rows('input')): the_row(); ?>
 
-            <span class="alert-warning">Fält som börjar med * är obligatoriskt</span>
+                    <?php if (get_sub_field('typOfField') === 'email'): ?>
+                        <div class="row centerInput">
+                            <div class="col-md-6">
+                                <?php if (get_sub_field('required') === true): ?>
+                                    <input type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <?php else: ?>
+                                    <input type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
-            <div class="row centerInput">
-                <div class="col-md-6">
-                    <input class="contactFullName" type="text" name="fullName" placeholder="* Namn"> <span class="alert-danger spanFullName"></span>
-                </div>
+                    <?php if (get_sub_field('typOfField') === 'text'): ?>
+                        <div class="row centerInput">
+                            <div class="col-md-6">
+                                <?php if (get_sub_field('required') === true): ?>
+                                    <input type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <?php else: ?>
+                                    <input type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
-                <div class="col-md-6">
-                    <input class="contactPhoneNumber" type="number" name="phoneNumber" placeholder="* Telefon"> <span class="alert-danger spanPhoneNumber"><span>
-                    </div>
-                </div>
+                    <?php if (get_sub_field('typOfField') === 'number'): ?>
+                        <div class="row centerInput">
+                            <div class="col-md-6">
+                                <?php if (get_sub_field('required') === true): ?>
+                                    <input type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <?php else: ?>
+                                    <input type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
-                <div class="row centerInput">
-                    <div class="col-md-6">
-                        <input class="contactEmail" type="email" name="email" placeholder="* exempel@exempel.com"> <span class="alert-danger spnaEmail"></span>
-                    </div>
-                    <div class="col-md-6">
-                        <input class="contactCommpany" type="text" name="commpany" placeholder="Företag (frivillig)"> <span class="alert-danger spanCompany"></span>
-                    </div>
-                </div>
+                    <?php if (get_sub_field('typOfField') === 'textarea'): ?>
+                        <div class="row centerInput">
+                            <div class="col-md-6">
+                                <?php if (get_sub_field('required') === true): ?>
+                                    <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"  required></textarea>
+                                <?php else: ?>
+                                    <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"></textarea>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endwhile; ?>
 
                 <div class="row centerInput">
                     <div class="col-md-12">
-                        <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="* Medelande..."></textarea> <span class="alert-danger spanMessage"></span>
-                    </div>
-                </div>
-
-                <div class="row centerInput">
-                    <div class="col-md-12">
-                        <button class="contactSubmit" type="submit" name="button">Skicka</button>
+                        <button class="contactSubmit" type="submit" name="button">
+                            <?php the_field('sendBtn') ?>
+                        </button>
                     </div>
                 </div>
 
             </form>
-
         </div>
     </div>
+<?php endif; ?>
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
