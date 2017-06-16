@@ -63,6 +63,6 @@ add_theme_support('plate-tabs', ['help', 'screen-options']);
 // Set custom permalink structure.
 add_theme_support('plate-permalink', '/%postname%/');
 // Set custom login logo.
-add_theme_support('plate-login', sprintf('%s/%s', get_template_directory_uri(), '/assets/images/logo.png'));
+add_theme_support('plate-login', sprintf('%s/%s', get_template_directory_uri(), '/Screenshot.png'));
 // Set custom footer text.
-add_theme_support('plate-footer', 'Thank you for creating with <a href="https://wordplate.github.io" target="_blank">WordPlate</a>.');
+add_theme_support('plate-footer', 'Skapad med &#10084; av <a href="handelsmarketing.se" target="_blank">HandelsMarketing</a>.');
