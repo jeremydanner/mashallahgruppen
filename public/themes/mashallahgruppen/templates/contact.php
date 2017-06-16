@@ -53,73 +53,56 @@ get_header(); ?>
 
 <div class="row">
 
-    <div class="col-md-4">
-        <div class="colInnerWrapper">
-            <a href="<?php the_field('email'); ?>"><?php the_field('email') ?></a>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <a href="<?php the_field('phone'); ?>"><?php the_field('phone') ?></a>
-    </div>
-
-    <div class="col-md-4">
-        <a href="<?php the_field('adress'); ?>"><?php the_field('adress') ?></a>
-    </div>
-
-</div>
-
-<!-- Contact form -->
-<?php if (have_rows('input')): ?>
-    <div class="row">
-        <div class="col-md-12">
+    <!-- Contact form -->
+    <?php if (have_rows('input')): ?>
+        <div class="col-md-6">
 
             <form class="contactForm" action="/kontakt" method="post">
                 <?php while (have_rows('input')): the_row(); ?>
 
                     <?php if (get_sub_field('typOfField') === 'email'): ?>
                         <!-- <div class="row centerInput"> -->
-                            <div class="col-md-6">
-                                <?php if (get_sub_field('required') === true): ?>
-                                    <input type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
-                                <?php else: ?>
-                                    <input type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
-                                <?php endif; ?>
-                            </div>
+                        <div class="form-group">
+                            <?php if (get_sub_field('required') === true): ?>
+                                <input class="form-control" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                            <?php else: ?>
+                                <input class="form-control" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                            <?php endif; ?>
+                        </div>
                         <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'text'): ?>
                         <!-- <div class="row centerInput"> -->
-                            <div class="col-md-6">
-                                <?php if (get_sub_field('required') === true): ?>
-                                    <input type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
-                                <?php else: ?>
-                                    <input type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>">
-                                <?php endif; ?>
-                            </div>
+                        <div class="form-group">
+                            <?php if (get_sub_field('required') === true): ?>
+                                <input class="form-control" type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                            <?php else: ?>
+                                <input class="form-control" type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                            <?php endif; ?>
+                        </div>
                         <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'number'): ?>
                         <!-- <div class="row centerInput"> -->
-                            <div class="col-md-6">
-                                <?php if (get_sub_field('required') === true): ?>
-                                    <input type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
-                                <?php else: ?>
-                                    <input type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
-                                <?php endif; ?>
-                            </div>
+                        <div class="form-group">
+                            <?php if (get_sub_field('required') === true): ?>
+                                <input class="form-control" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                            <?php else: ?>
+                                <input class="form-control" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                            <?php endif; ?>
+                        </div>
                         <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'textarea'): ?>
                         <div class="row centerInput">
-                            <div class="col-md-6">
+                            <div class="form-group">
                                 <?php if (get_sub_field('required') === true): ?>
-                                    <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"  required></textarea>
+                                    <textarea class="form-control contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"  required></textarea>
                                 <?php else: ?>
-                                    <textarea class="contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"></textarea>
+                                    <textarea class="form-control contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"></textarea>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -127,8 +110,8 @@ get_header(); ?>
                 <?php endwhile; ?>
 
                 <div class="row centerInput">
-                    <div class="col-md-12">
-                        <button class="contactSubmit" type="submit" name="button">
+                    <div class="form-group">
+                        <button class="form-control contactSubmit" type="submit" name="button">
                             <?php the_field('sendBtn') ?>
                         </button>
                     </div>
@@ -136,7 +119,20 @@ get_header(); ?>
 
             </form>
         </div>
+    <?php endif; ?>
+
+
+    <div class="col-md-6">
+        <div class="google-maps">
+            <iframe
+            width="600" height="450"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBl5_vhw0jxUhjpZpA_ALVhnqQYKTRPkos&origin=Gothenburg+Sweden&destination=<?php the_field('adress') ?>"
+        </iframe>
     </div>
-<?php endif; ?>
+</div>
+
+</div><!-- end row -->
+
 
 <?php get_footer(); ?>
