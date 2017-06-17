@@ -14,11 +14,9 @@ Template name: Contact
 // TODO: Email Dose not sent from localhost. Test function when on server.
 // BUG: Javascript bug allows user to senad email if one fieald passes validation
 // BUG: form dose not validate in php at all...
-
 if ($_POST) {
     dd($_POST);
 }
-
 get_header(); ?>
 
 <!-- Flash message success -->
@@ -57,70 +55,60 @@ get_header(); ?>
     <?php if (have_rows('input')): ?>
         <div class="col-md-6">
 
-            <form class="contactForm" action="/kontakt" method="post">
+            <form class="contactForm" action="/sv/kontakt/" method="post">
                 <?php while (have_rows('input')): the_row(); ?>
 
                     <?php if (get_sub_field('typOfField') === 'email'): ?>
-                        <!-- <div class="row centerInput"> -->
                         <div class="form-group">
                             <?php if (get_sub_field('required') === true): ?>
-                                <input class="form-control" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <input class="form-control contactForm" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
                             <?php else: ?>
-                                <input class="form-control" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <input class="form-control contactForm" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
                             <?php endif; ?>
                         </div>
-                        <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'text'): ?>
-                        <!-- <div class="row centerInput"> -->
                         <div class="form-group">
                             <?php if (get_sub_field('required') === true): ?>
-                                <input class="form-control" type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <input class="form-control contactForm" type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
                             <?php else: ?>
-                                <input class="form-control" type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <input class="form-control contactForm" type="text" name="fullName" placeholder="<?= get_sub_field('input') ?>">
                             <?php endif; ?>
                         </div>
-                        <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'number'): ?>
-                        <!-- <div class="row centerInput"> -->
                         <div class="form-group">
                             <?php if (get_sub_field('required') === true): ?>
-                                <input class="form-control" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <input class="form-control contactForm" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
                             <?php else: ?>
-                                <input class="form-control" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <input class="form-control contactForm" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
                             <?php endif; ?>
                         </div>
-                        <!-- </div> -->
                     <?php endif; ?>
 
                     <?php if (get_sub_field('typOfField') === 'textarea'): ?>
-                        <div class="row centerInput">
-                            <div class="form-group">
-                                <?php if (get_sub_field('required') === true): ?>
-                                    <textarea class="form-control contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"  required></textarea>
-                                <?php else: ?>
-                                    <textarea class="form-control contactMessage" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"></textarea>
-                                <?php endif; ?>
-                            </div>
+                        <div class="form-group">
+                            <?php if (get_sub_field('required') === true): ?>
+                                <textarea class="form-control contactForm" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"  required></textarea>
+                            <?php else: ?>
+                                <textarea class="form-control contactForm" name="message" rows="8" cols="60" placeholder="<?= get_sub_field('input') ?>"></textarea>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 <?php endwhile; ?>
 
-                <div class="row centerInput">
-                    <div class="form-group">
-                        <button class="form-control contactSubmit" type="submit" name="button">
-                            <?php the_field('sendBtn') ?>
-                        </button>
-                    </div>
+                <div class="form-group">
+                    <button class="form-control contactForm" type="submit" name="button" value="submit">
+                        <?php the_field('sendBtn') ?>
+                    </button>
                 </div>
 
             </form>
         </div>
-    <?php endif; ?>
 
+    <?php endif; ?>
 
     <div class="col-md-6">
         <div class="google-maps">

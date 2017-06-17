@@ -68,44 +68,34 @@
 
 // css for the contact form /Kontakt
 .google-maps {
-    position: relative;
-    padding-bottom: 75%; // This is the aspect ratio
-    height: 0;
-    overflow: hidden;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 75%;
+  position: relative;
 }
 .google-maps iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
-.centerInput {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color: $mainTextColor;
-    margin: 10px auto;
-
-    input {
-        width: 100%;
+    input.contactForm {
         padding: 10px;
         border-radius: 5px;
         margin: 5px auto;
         background-color: $formBackgroundColor;
         border: 0;
     }
-    textarea {
-        width: 100%;
+    textarea.contactForm {
         padding: 10px;
         border-radius: 5px;
         margin: 5px auto;
         background-color: $formBackgroundColor;
         border: 0;
     }
-    button {
-        width: 100%;
+    button.contactForm {
         padding: 10px 40px;
         border-radius: 5px;
         background-color: $buttonPink;
@@ -113,10 +103,9 @@
         border: 0;
         transition: 0.2s;
     }
-    button:hover {
+    button.contactForm:hover {
         box-shadow: $boxShadow;
     }
-}
 
 .alert {
     display: flex;
