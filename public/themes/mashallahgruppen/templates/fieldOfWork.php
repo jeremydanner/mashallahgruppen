@@ -28,7 +28,7 @@ Template name: FieldOfWork
 
     <?php if (have_rows('FieldOfWorkBody')): ?>
         <?php while (have_rows('FieldOfWorkBody')): the_row(); ?>
-            <div class="col-md-6 fields">
+            <div class="col-md-6 fields FieldOfWorkImg">
                 <img src="<?php the_sub_field('bodyImage') ?>" alt="<?php the_sub_field('bodyImageTitle') ?>">
                 <p><?php the_sub_field('body') ?></p>
             </div>
