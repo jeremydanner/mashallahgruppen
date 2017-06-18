@@ -8,6 +8,7 @@
 'use strict';
 
 import {formValidation} from './formValidation';
+import {snapWidget} from './snapWidget';
 
 /*
 * js for changing language in the manu
