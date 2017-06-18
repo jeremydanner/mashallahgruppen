@@ -148,6 +148,7 @@ get_header(); ?>
             <iframe
             width="600" height="450"
             frameborder="0" style="border:0"
+            scrolling="no"
             src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBl5_vhw0jxUhjpZpA_ALVhnqQYKTRPkos&origin=Gothenburg+Sweden&destination=<?php the_field('adress') ?>"
         </iframe>
     </div>

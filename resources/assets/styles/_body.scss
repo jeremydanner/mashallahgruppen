@@ -1,117 +1,114 @@
 // styles for the body of all pages
 
 .rowWrapper {
-    margin: 100px auto;
+  margin: 100px auto;
 }
 
 .colInnerWrapper {
-    max-width: 700px;
-    margin: 0 auto;
+  max-width: 700px;
+  margin: 0 auto;
 
-    .alignCenter {
-        text-align: center;
-    }
+  .alignCenter {
+    text-align: center;
+  }
 
 } // end .colInnerWrapper
 
 .circleWrapper {
-    display: flex;
-    justify-content: center;
-    margin: 100px auto 100px auto;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto 100px auto;
 
-    .circle {
-        width: 50px;
-        height: 50px;
-        margin: 15px;
-        border-radius: 50px;
-        background-color: $mashallahOrange;
-    }
+  .circle {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 50px;
+    background-color: $mashallahOrange;
+  }
 } // end .circleWrapper
 
 .latestNewsWrapper {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 50px auto;
+  }
+  .row {
 
-    h2 {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 50px auto;
+    .latestNews {
+
+      img {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+      }
+
     }
-    .row {
-
-        .latestNews {
-
-            img {
-                width: 100%;
-                height: auto;
-                padding: 5px;
-            }
-
-        }
-    }
+  }
 } // end .latestNewsWrapper
 
 // class onaly appers on the fieldOfWorkPage
 .fields {
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-    p {
-        text-align: center;
-    }
+  p {
+    text-align: center;
+  }
 
 }
 
 // css for the contact form /Kontakt
 .google-maps {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 75%;
-  position: relative;
+  margin: 0;
+  width: 100%;
 }
 .google-maps iframe {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
+  display: block;
+  pointer-events: none;
+  position: relative; /* IE needs a position other than static */
   width: 100%;
 }
 
-    input.contactForm {
-        padding: 10px;
-        border-radius: 5px;
-        margin: 5px auto;
-        background-color: $formBackgroundColor;
-        border: 0;
-    }
-    textarea.contactForm {
-        padding: 10px;
-        border-radius: 5px;
-        margin: 5px auto;
-        background-color: $formBackgroundColor;
-        border: 0;
-    }
-    button.contactForm {
-        padding: 10px 40px;
-        border-radius: 5px;
-        background-color: $buttonPink;
-        margin: 5px auto;
-        border: 0;
-        transition: 0.2s;
-    }
-    button.contactForm:hover {
-        box-shadow: $boxShadow;
-    }
+input.contactForm {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px auto;
+  background-color: $formBackgroundColor;
+  border: 0;
+}
+textarea.contactForm {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px auto;
+  background-color: $formBackgroundColor;
+  border: 0;
+}
+button.contactForm {
+  padding: 10px 40px;
+  border-radius: 5px;
+  background-color: $buttonPink;
+  margin: 5px auto;
+  border: 0;
+  transition: 0.2s;
+}
+button.contactForm:hover {
+  box-shadow: $boxShadow;
+}
 
 .alert {
-    display: flex;
-    justify-content: center;
-    transition: 0.5s;
-    margin: 10px auto;
-    height: 45px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s;
+  margin: 10px auto;
+  height: 45px;
+  align-items: center;
 } // end contact form
