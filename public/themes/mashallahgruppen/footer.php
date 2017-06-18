@@ -20,7 +20,7 @@
 
     <div class="col-md-4 footer">
         <span class="footerCenter">
-            Na na na na na na Batman! na na na na na na Batman! Batman! Batman!
+            Copyright © <?= date('Y'); ?> Mashallahgruppen
         </span>
     </div>
 
