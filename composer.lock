@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "df77922a1cdb970397dd2f485b887d87",
+    "content-hash": "7f1289333c1278c613c008dfd6d975e8",
     "packages": [
         {
             "name": "composer/installers",
@@ -814,6 +814,55 @@
             "time": "2017-05-31T11:50:54+00:00"
         },
         {
+            "name": "wordplate/mail",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wordplate/mail.git",
+                "reference": "8a9bd84c972f8af7fe22301df5d9dd3784afe9a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wordplate/mail/zipball/8a9bd84c972f8af7fe22301df5d9dd3784afe9a4",
+                "reference": "8a9bd84c972f8af7fe22301df5d9dd3784afe9a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "wordplate/framework": "^5.0"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Klaiber",
+                    "email": "hello@vinkla.com",
+                    "homepage": "https://vinkla.com"
+                },
+                {
+                    "name": "Chris Andersson",
+                    "email": "hello@puredazzle.se",
+                    "homepage": "https://puredazzle.se"
+                }
+            ],
+            "description": "A mail plugin for WordPlate",
+            "keywords": [
+                "mail",
+                "plugin",
+                "wordplate",
+                "wordpress"
+            ],
+            "time": "2017-05-04T08:34:19+00:00"
+        },
+        {
             "name": "wordplate/plate",
             "version": "2.3.2",
             "source": {
@@ -893,7 +942,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/jetpack.5.0.zip",
-                "reference": null,
+                "reference": "tags/5.0",
                 "shasum": null
             },
             "require": {

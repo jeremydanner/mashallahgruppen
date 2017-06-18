@@ -11,11 +11,44 @@ Template name: Contact
 *   (c) Mashallahgruppen
 */
 
-// TODO: Email Dose not sent from localhost. Test function when on server.
-// BUG: Javascript bug allows user to senad email if one fieald passes validation
-// BUG: form dose not validate in php at all...
 if ($_POST) {
-    dd($_POST);
+
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $messageDanger = 'Du måste fylla i e-post';
+        return false;
+    }
+
+    if (!filter_var($_POST['fullName'], FILTER_SANITIZE_SPECIAL_CHARS)) {
+        $messageDanger = 'Bara bokstäver';
+        return false;
+    }
+
+    if (!filter_var($_POST['phoneNumber'], FILTER_SANITIZE_NUMBER_FLOAT)) {
+        $messageDanger = 'Bara siffror';
+        return false;
+    }
+
+    if (!filter_var($_POST['message'], FILTER_SANITIZE_SPECIAL_CHARS)) {
+        $messageDanger = 'Bara bokstäver';
+        return false;
+    }
+
+    function sendEmail($email, $fullName, $phoneNumber, $message)
+    {
+        wp_mail(
+            'jeremy.danner@HandelsMarketing.se',
+            'Från ' . $fullName . ' ' . $email,
+            $message . ' telefon: ' . $phoneNumber
+        );
+    }
+
+    if (isset($_POST['email']) && isset($_POST['fullName']) && isset($_POST['phoneNumber']) && isset($_POST['message'])) {
+        sendEmail($_POST['email'], $_POST['fullName'], $_POST['phoneNumber'], $_POST['message']);
+        $messageSuccess = 'Tack för ditt medelande!';
+    } else {
+        $messageDanger = 'Något gick fel, försök igen.';
+    }
+
 }
 get_header(); ?>
 
@@ -61,9 +94,9 @@ get_header(); ?>
                     <?php if (get_sub_field('typOfField') === 'email'): ?>
                         <div class="form-group">
                             <?php if (get_sub_field('required') === true): ?>
-                                <input class="form-control contactForm" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <input class="form-control contactForm" type="email" name="email" placeholder="<?= get_sub_field('input') ?>" required>
                             <?php else: ?>
-                                <input class="form-control contactForm" type="email" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <input class="form-control contactForm" type="email" name="email" placeholder="<?= get_sub_field('input') ?>">
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -81,9 +114,9 @@ get_header(); ?>
                     <?php if (get_sub_field('typOfField') === 'number'): ?>
                         <div class="form-group">
                             <?php if (get_sub_field('required') === true): ?>
-                                <input class="form-control contactForm" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>" required>
+                                <input class="form-control contactForm" type="number" name="phoneNumber" placeholder="<?= get_sub_field('input') ?>" required>
                             <?php else: ?>
-                                <input class="form-control contactForm" type="number" name="fullName" placeholder="<?= get_sub_field('input') ?>">
+                                <input class="form-control contactForm" type="number" name="phoneNumber" placeholder="<?= get_sub_field('input') ?>">
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
