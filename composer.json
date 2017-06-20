@@ -7,7 +7,6 @@
         "php": "^7.0",
         "wordplate/framework": "^5.0",
         "wordplate/plate": "^2.3",
-        "wpackagist-plugin/advanced-custom-fields": "^4.4",
         "wpackagist-plugin/polylang": "^2.1",
         "wpackagist-plugin/Jetpack": "^5.0",
         "wordplate/mail": "^2.0"

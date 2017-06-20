@@ -83,3 +83,5 @@ add_filter('excerpt_more', function () {
 add_filter('excerpt_length', function () {
     return 101;
 });
+
+require __DIR__.'/library/acf.php';
