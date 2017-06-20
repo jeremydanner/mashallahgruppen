@@ -9,7 +9,7 @@ declare(strict_types=1);
 */
 
 // Register plugin helpers.
-//require template_path('library/plate.php');
+require template_path('library/plate.php');
 
 // Set theme defaults.
 add_action('after_setup_theme', function () {
