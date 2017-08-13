@@ -84,6 +84,14 @@ get_header(); ?>
 
 <div class="row">
 
+    <div class="col-md-6">
+        <div class="google-maps">
+            <a href="https://www.google.se/maps/place/Byfogdegatan+6C,+415+05+G%C3%B6teborg/@57.726967,12.0079088,16z/data=!4m5!3m4!1s0x464ff4641abeeaa9:0x90a7abc123878fb!8m2!3d57.7269642!4d12.0122862?hl=en" target="_blank">
+                <img src="<?= get_template_directory_uri(); ?>/public/icons/googlemaps.png" alt="googleMaps">
+            </a>
+        </div>
+    </div>
+
     <!-- Contact form -->
     <?php if (have_rows('input')): ?>
         <div class="col-md-6">
@@ -142,17 +150,6 @@ get_header(); ?>
         </div>
 
     <?php endif; ?>
-
-    <div class="col-md-6">
-        <div class="google-maps">
-            <iframe
-            width="600" height="450"
-            frameborder="0" style="border:0"
-            scrolling="no"
-            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBl5_vhw0jxUhjpZpA_ALVhnqQYKTRPkos&origin=Gothenburg+Sweden&destination=<?php the_field('adress') ?>"
-        </iframe>
-    </div>
-</div>
 
 </div><!-- end row -->
 

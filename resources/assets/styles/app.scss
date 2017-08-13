@@ -37,3 +37,12 @@
 
 // style for devices max 450px wide
 @import 'mediaMaxWidth450';
+
+.google-maps {
+  a {
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
