@@ -16,7 +16,7 @@
         "browser-sync": "^2.18.6",
         "clean-css-cli": "^4.0.0",
         "laravel-mix": "^0.8.1",
-        "node-sass": "^4.3.0",
+        "node-sass": "^4.7.2",
         "npm-run-all": "^4.0.1"
     }
 }
